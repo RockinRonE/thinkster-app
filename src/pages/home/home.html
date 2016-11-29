@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar color ="primary">
+
+    <ion-title>
+      My Title
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>                                                                           
+                                              
+<ion-content>
+
+  <ion-list no-lines>
+
+    <ion-item-sliding>
+
+      <button ion-item>
+        BUTTON TITLE 
+        <span>0 things</span>
+      </button>
+
+      <ion-item-options>
+
+        <button ion-button icon-only color="light">
+          <ion-icon name="clipboard"></ion-icon>
+          Edit
+        </button>
+        <!--icon-only seems to conflict since it includes text-->
+        <button ion-button icon-only color="danger">
+          <ion-icon name="trash"></ion-icon>
+          Delete
+        </button>
+
+      </ion-item-options>
+
+    </ion-item-sliding>
+
+  </ion-list>
+
+</ion-content>                                            
+                   
+                          
