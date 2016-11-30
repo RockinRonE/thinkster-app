@@ -2,7 +2,7 @@
   <ion-navbar color ="primary">
 
     <ion-title>
-      My Title
+      My Todo List
     </ion-title>
     <ion-buttons end>
       <button ion-button icon-only>
@@ -19,9 +19,9 @@
 
     <ion-item-sliding>
 
-      <button ion-item>
-        BUTTON TITLE 
-        <span>0 things</span>
+      <button ion-item (click)="viewChecklist(checklist)">
+        Location 
+        <span>0 todos</span>
       </button>
 
       <ion-item-options>

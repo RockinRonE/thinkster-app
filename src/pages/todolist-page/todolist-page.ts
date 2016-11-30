@@ -8,15 +8,15 @@ import { NavController } from 'ionic-angular';
   Ionic pages and navigation.
 */
 @Component({
-  selector: 'grocerylist-page',
-  templateUrl: 'grocerylist-page.html'
+  selector: 'todolist-page',
+  templateUrl: 'todolist-page.html'
 })
-export class GrocerylistPage {
+export class TodolistPage {
 
   constructor(public navCtrl: NavController) {}
 
   ionViewDidLoad() {
-    console.log('Hello GrocerylistPagePage Page');
+    console.log('Hello TodolistPagePage Page');
   }
 
 }
