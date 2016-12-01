@@ -5,7 +5,7 @@
       My Todo List
     </ion-title>
     <ion-buttons end>
-      <button ion-button icon-only>
+      <button ion-button icon-only (click)="addLocationlist()" >
         <ion-icon name="add-circle"></ion-icon>
       </button>
     </ion-buttons>
@@ -19,7 +19,7 @@
 
     <ion-item-sliding>
 
-      <button ion-item (click)="viewChecklist(checklist)">
+      <button ion-item (click)="viewTodolist(todolist)">
         Location 
         <span>0 todos</span>
       </button>

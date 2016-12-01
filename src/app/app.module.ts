@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 
+import { Storage } from '@ionic/storage';
+import { Data } from '../providers/data'; 
+
 import { HomePage } from '../pages/home/home';
 import { TodolistPage } from '../pages/todolist-page/todolist-page';
 
@@ -20,6 +23,6 @@ import { TodolistPage } from '../pages/todolist-page/todolist-page';
     HomePage,
     TodolistPage
   ],
-  providers: []
+  providers: [Storage, Data]
 })
 export class AppModule {}
