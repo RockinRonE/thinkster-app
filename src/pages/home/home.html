@@ -17,11 +17,11 @@
 
   <ion-list no-lines>
 
-    <ion-item-sliding>
+    <ion-item-sliding *ngFor="let todolist of todolists">
 
       <button ion-item (click)="viewTodolist(todolist)">
-        Location 
-        <span>0 todos</span>
+        {{todolist.location }}
+        <span>{{todolist.items.length}} todos</span>
       </button>
 
       <ion-item-options>

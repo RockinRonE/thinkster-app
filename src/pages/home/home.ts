@@ -41,9 +41,11 @@ export class HomePage {
         {
           text: 'Save',
           handler: data => {
-            console.log('Data saved!');
-            let newTodolist = new TodolistModel(data.name, []);
+            
+            let newTodolist = new TodolistModel(data.location, []);
             this.todolists.push(newTodolist);
+
+            console.log('Data saved!');
           }
         }
       ]
