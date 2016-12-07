@@ -21,17 +21,17 @@
 
       <button ion-item (click)="viewTodolist(todolist)">
         {{todolist.location }}
-        <span>{{todolist.items.length}} todos</span>
+        <span>{{todolist.todos.length}} todos</span>
       </button>
 
       <ion-item-options>
 
-        <button ion-button icon-only color="light">
+        <button ion-button icon-left color="light" (click)="renameLocationlist(todolist)">
           <ion-icon name="clipboard"></ion-icon>
           Edit
         </button>
-        <!--icon-only seems to conflict since it includes text-->
-        <button ion-button icon-only color="danger">
+        
+        <button ion-button icon-left color="danger" (click)="deleteLocationlist(todolist)">
           <ion-icon name="trash"></ion-icon>
           Delete
         </button>

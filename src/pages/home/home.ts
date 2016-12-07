@@ -53,6 +53,47 @@ export class HomePage {
     prompt.present(); 
   }
 
+  renameLocationlist(location): void {
+
+    let prompt = this.alertCtrl.create({
+      title: 'Rename Location',
+      message: 'Enter the new location name',
+      inputs: [
+        {
+          name: 'location'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancel'
+        },
+        {
+          text: 'Save',
+          handler: data => {
+
+            let index = this.todolists.indexOf(location);
+
+            if (index > -1) {
+              this.todolists[index].setLocation(data.location);
+            }
+
+          }
+        }
+      ]
+    });
+
+    prompt.present();
+  }
+
+  deleteLocationlist(todolist): void {
+
+    let index = this.todolists.indexOf(todolist);
+
+    if (index > -1) {
+      this.todolists.splice(index, 1); 
+    }
+  }
+
 }
 
  

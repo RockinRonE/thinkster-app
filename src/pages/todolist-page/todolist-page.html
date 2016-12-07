@@ -3,7 +3,7 @@
   <ion-navbar color="primary">
 
     <ion-title>
-      Todos
+      {{ todolist.title }}
     </ion-title>
 
     <ion-buttons end>
@@ -12,7 +12,7 @@
         <ion-icon name="refresh-circle"></ion-icon>
       </button>
 
-      <button ion-button icon-only>
+      <button ion-button icon-only (click)="addItem()">
         <ion-icon name="add-circle"></ion-icon>
       </button>
 
@@ -25,24 +25,20 @@
 
   <ion-list no-lines>
 
-    <ion-item-sliding>
+    <ion-item-sliding *ngFor="let todo of todolist.todos">
 
       <ion-item>
-        <ion-label>Todo #1</ion-label>
+        <ion-label>{{ todo.title }}</ion-label>
         <ion-checkbox> </ion-checkbox>
       </ion-item>
 
       <ion-item-options>
 
-        <button ion-button icon-only color="light">
+        <button ion-button icon-left color="light" (click)="renameTodo(todo)">
           <ion-icon name="clipboard"></ion-icon>
           Edit
         </button>
 
-        <button ion-button icon-only color="danger">
-          <ion-icon name="trash"></ion-icon>
-          Delete
-        </button>
 
       </ion-item-options>
       
