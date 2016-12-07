@@ -5,6 +5,8 @@ import { TodolistPage } from '../todolist-page/todolist-page';
 
 import { TodolistModel } from '../../models/todolist-model';
 
+import { Data } from '../../providers/data';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -14,7 +16,7 @@ export class HomePage {
 
   todolists: TodolistModel[] = [];
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController, public dataService: Data) {
     
   }
 
@@ -44,6 +46,8 @@ export class HomePage {
             
             let newTodolist = new TodolistModel(data.location, []);
             this.todolists.push(newTodolist);
+
+            this.save(); 
 
             console.log('Data saved!');
           }
