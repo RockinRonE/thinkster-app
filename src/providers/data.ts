@@ -18,9 +18,14 @@ export class Data {
     //     todos: todolist.todos
     //   });
     // });
-
+    console.log(data);
     let newData = JSON.stringify(data);
-    this.storage.set('todolist', newData);
+    // console.log(data);
+    this.storage.set('todolist', data);
+  }
+
+  getData(): Promise<any> {
+    return this.storage.get('todolist');
   }
 
 }

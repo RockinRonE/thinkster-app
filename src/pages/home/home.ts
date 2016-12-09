@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController, AlertController, Platform } from 'ionic-angular';
 
 import { TodolistPage } from '../todolist-page/todolist-page';
 
@@ -16,7 +16,7 @@ export class HomePage {
 
   todolists: TodolistModel[] = [];
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController, public dataService: Data) {
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController, public dataService: Data, public platform: Platform) {
     
   }
 
@@ -49,7 +49,7 @@ export class HomePage {
 
             this.save(); 
 
-            console.log('Data saved!');
+           
           }
         }
       ]
@@ -98,6 +98,34 @@ export class HomePage {
     }
   }
 
+  save(): void {
+    this.dataService.save(this.todolists);
+  }
+  
+  ionViewDidLoad() {
+
+    this.platform.ready().then (() => {
+
+    
+    this.dataService.getData().then((todolists) => {
+      console.log(todolists);
+      let savedTodolists: any = false;
+
+      // if(typeof(todolists) != 'undefined') {
+      //   savedTodolists = JSON.parse(todolists);
+      // }
+
+      if(todolists) {
+        
+        todolists.forEach((list) => {
+          let loadTodolist = new TodolistModel(list.location, list.todos);
+
+          this.todolists.push(loadTodolist);
+        });
+      }
+    });
+    });
+  }
 }
 
  
